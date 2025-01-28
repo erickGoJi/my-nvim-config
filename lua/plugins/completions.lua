@@ -1,8 +1,8 @@
 return {
-  {
-    "hrsh7th/cmp-nvim-lsp"
-  },
-  -- Plugin: nvim-lspconfig
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	-- Plugin: nvim-lspconfig
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
@@ -35,8 +35,8 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
-          { name = "nvim_lsp" }, 
-          { name = "luasnip" },
+					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
 				}),
