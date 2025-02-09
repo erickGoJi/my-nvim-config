@@ -19,7 +19,7 @@ git clone https://github.com/erickGoJi/my-nvim-config.git ~/.config/nvim
 ```vim
 :source %
 ```
-3. Setup the plugins:
+3. Setup copilot by running the following command, but you need to verify that your node.js path is correct in lua/plugins/copilot.lua  for the setup to work:
 ```vim
 :Copilot setup
 ```
