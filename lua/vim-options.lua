@@ -5,5 +5,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+yy')
+vim.cmd("set list")
+vim.cmd("set listchars=tab:»·,trail:·")
+vim.cmd("set clipboard=unnamedplus")
 vim.g.mapleader = " "
-
