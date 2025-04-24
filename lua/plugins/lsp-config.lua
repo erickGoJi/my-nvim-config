@@ -43,12 +43,33 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.gleam.setup({
+			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
 
-			lspconfig.bashls.setup({
+			lspconfig.yamlls.setup({
 				capabilities = capabilities,
+				settings = {
+					yaml = {
+						format = {
+							enable = true,
+						},
+						validate = true,
+						schemaStore = {
+							enable = true,
+							url = "https://www.schemastore.org/api/json/catalog.json",
+						},
+						schemas = {
+							["https://raw.githubusercontent.com/lalcebo/json-schema/master/serverless/reference.json"] = {
+								"serverless.yml",
+								"serverless.yaml",
+							},
+							["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = {
+								".github/workflows/*",
+							},
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
