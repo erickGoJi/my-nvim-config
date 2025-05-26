@@ -9,3 +9,8 @@ vim.cmd("set list")
 vim.cmd("set listchars=tab:»·,trail:·")
 vim.cmd("set clipboard=unnamedplus")
 vim.g.mapleader = " "
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+	end,
+})
