@@ -37,3 +37,10 @@ git clone https://github.com/erickGoJi/my-nvim-config.git ~/.config/nvim
 9. Telescope
 10. Treesitter
 
+
+## Testing
+
+Run the test suite with:
+```bash
+nvim --headless -c "PlenaryBustedDirectory tests { minimal_init = 'tests/minimal_init.lua' }"
+```
