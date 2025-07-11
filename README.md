@@ -26,7 +26,7 @@ git clone https://github.com/erickGoJi/my-nvim-config.git ~/.config/nvim
 
 ## Plugins
 
-1. Alpa
+1. Alpha
 2. Catppuccino
 3. Completion-nvim
 4. Copilot
