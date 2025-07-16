@@ -4,6 +4,7 @@ return {
 		tag = "0.1.5",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-live-grep-args.nvim",
 		},
 		config = function()
 			local builtin = require("telescope.builtin")
@@ -11,6 +12,12 @@ return {
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
 			vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, {})
+			vim.keymap.set(
+				"n",
+				"<leader>fi",
+				require("telescope").extensions.live_grep_args.live_grep_args,
+				{ noremap = true }
+			)
 		end,
 	},
 	{
@@ -24,6 +31,7 @@ return {
 				},
 			})
 			require("telescope").load_extension("ui-select")
+			require("telescope").load_extension("live_grep_args")
 		end,
 	},
 }

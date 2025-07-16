@@ -11,6 +11,7 @@ return {
 				null_ls.builtins.diagnostics.golangci_lint,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.yamlfmt,
+				null_ls.builtins.formatting.black,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

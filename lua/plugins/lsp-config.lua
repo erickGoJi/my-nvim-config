@@ -27,9 +27,9 @@ return {
 				capabilities = capabilities,
 			})
 
-                        lspconfig.tsserver.setup({
-                                capabilities = capabilities,
-                        })
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
 
 			lspconfig.dockerls.setup({
 				capabilities = capabilities,
@@ -70,6 +70,10 @@ return {
 						},
 					},
 				},
+			})
+
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

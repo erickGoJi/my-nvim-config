@@ -13,9 +13,9 @@ return {
 		configTree.setup({
 			filesystem = {
 				filtered_items = {
-                                        visible = true, -- Show hidden files
-                                        hide_dotfiles = false, -- Do not hide files starting with `.`
-                                        hide_gitignored = false, -- Show git-ignored files
+					visible = true, -- Show hidden files
+					hide_dotfiles = false, -- Do not hide files starting with `.`
+					hide_gitignored = false, -- Show git-ignored files
 				},
 			},
 		})
