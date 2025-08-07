@@ -9,12 +9,52 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
+<<<<<<< HEAD
     opts = {
       auto_install = true,
     },
   },
   {
     "neovim/nvim-lspconfig",
+=======
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim",
+    },
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "gopls",
+        "ts_ls",
+        "dockerls",
+        "erlangls",
+        "bashls",
+        "yamlls",
+        "pyright",
+      },
+    },
+    config = function()
+      require("mason-lspconfig").setup({
+        automatic_enable = {
+          "lua_ls",
+          "gopls",
+          "ts_ls",
+          "dockerls",
+          "erlangls",
+          "bashls",
+          "yamlls",
+          "pyright",
+        },
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+>>>>>>> 26b16a0 ([fix] go: update lazy-lock.json and lsp-config.lua)
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -39,6 +79,7 @@ return {
         capabilities = capabilities,
       })
 
+<<<<<<< HEAD
       lspconfig.gleam.setup({
         capabilities = capabilities,
       })
@@ -76,6 +117,41 @@ return {
         capabilities = capabilities,
       })
 
+=======
+      lspconfig.bashls.setup({
+        capabilities = capabilities,
+      })
+
+      lspconfig.yamlls.setup({
+        capabilities = capabilities,
+        settings = {
+          yaml = {
+            format = {
+              enable = true,
+            },
+            validate = true,
+            schemaStore = {
+              enable = true,
+              url = "https://www.schemastore.org/api/json/catalog.json",
+            },
+            schemas = {
+              ["https://raw.githubusercontent.com/lalcebo/json-schema/master/serverless/reference.json"] = {
+                "serverless.yml",
+                "serverless.yaml",
+              },
+              ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = {
+                ".github/workflows/*",
+              },
+            },
+          },
+        },
+      })
+
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+      })
+
+>>>>>>> 26b16a0 ([fix] go: update lazy-lock.json and lsp-config.lua)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
