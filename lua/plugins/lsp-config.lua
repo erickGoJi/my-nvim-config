@@ -140,6 +140,7 @@ return {
 							["https://raw.githubusercontent.com/lalcebo/json-schema/master/serverless/reference.json"] = {
 								"serverless.yml",
 								"serverless.yaml",
+								"functions.yml",
 							},
 							["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = {
 								".github/workflows/*",
