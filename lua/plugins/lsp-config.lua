@@ -9,14 +9,12 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
-<<<<<<< HEAD
-    opts = {
-      auto_install = true,
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-=======
+		opts = {
+			auto_install = true,
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
 			"neovim/nvim-lspconfig",
@@ -56,7 +54,6 @@ return {
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
->>>>>>> 26b16a0 ([fix] go: update lazy-lock.json and lsp-config.lua)
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -81,45 +78,18 @@ return {
 				capabilities = capabilities,
 			})
 
-<<<<<<< HEAD
-      lspconfig.gleam.setup({
-        capabilities = capabilities,
-      })
+			lspconfig.gleam.setup({
+				capabilities = capabilities,
+			})
 
-      lspconfig.bashls.setup({
-        capabilities = capabilities,
-      })
+			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
 
-      lspconfig.yamlls.setup({
-        capabilities = capabilities,
-        settings = {
-          yaml = {
-            format = {
-              enable = true,
-            },
-            validate = true,
-            schemaStore = {
-              enable = true,
-              url = "https://www.schemastore.org/api/json/catalog.json",
-            },
-            schemas = {
-              ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = {
-                ".github/workflows/*",
-              },
-              ["https://json.schemastore.org/composer"] = {
-                "serverless.yml",
-                "serverless.yaml",
-              },
-            },
-          },
-        },
-      })
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
 
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
-      })
-
-=======
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
