@@ -11,6 +11,28 @@ This is my personal neovim configuration. It is a work in progress and is subjec
 
 ## Installation
 
+### Automated Installation (Recommended)
+
+Run the automated installation script:
+```bash
+curl -fsSL https://raw.githubusercontent.com/erickGoJi/my-nvim-config/main/script/install.sh | bash
+```
+
+Or clone the repository first and run the script locally:
+```bash
+git clone https://github.com/erickGoJi/my-nvim-config.git
+cd my-nvim-config
+./script/install.sh
+```
+
+The script will:
+- Check for Neovim and required dependencies
+- Backup any existing configuration
+- Install the configuration to `~/.config/nvim`
+- Set up plugins automatically
+
+### Manual Installation
+
 1. Clone the repository to your home directory:
 ```bash
 git clone https://github.com/erickGoJi/my-nvim-config.git ~/.config/nvim
