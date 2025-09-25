@@ -19,7 +19,7 @@ return {
 						indentscope_color = "",
 					},
 				},
-				flavour = "mocha", -- Cambia entre latte, frappe, macchiato, mocha
+				flavour = "macchiato", -- Cambia entre latte, frappe, macchiato, mocha
 				background = { -- :h background
 					light = "latte",
 					dark = "mocha",
@@ -37,5 +37,11 @@ return {
 			sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
 			sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
 		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 }
