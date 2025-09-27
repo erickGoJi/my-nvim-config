@@ -7,7 +7,7 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+yy')
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.cmd("set list")
-vim.cmd("set listchars=tab:»·,trail:·")
+vim.cmd("set listchars=tab:»·,trail:·,space:·,nbsp:␣")
 vim.cmd("set clipboard=unnamedplus")
 vim.g.mapleader = " "
 vim.api.nvim_create_autocmd("CursorHold", {
