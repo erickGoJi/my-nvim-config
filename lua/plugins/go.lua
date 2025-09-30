@@ -14,11 +14,11 @@ return {
     opts = {},
     config = function()
       require("gopher").setup({
-        goimport = "gopls",    -- can be "gopls", "goimports", "goimport", "gofumpt"
-        gofmt = "gofumpt",     -- can be "gofumpt", "goimports", "gofmt"
-        max_line_len = 120,    -- max line length in golang source code
+        goimport = "gopls", -- can be "gopls", "goimports", "goimport", "gofumpt"
+        gofmt = "gofumpt", -- can be "gofumpt", "goimports", "gofmt"
+        max_line_len = 120, -- max line length in golang source code
         tag_transform = false, -- tag transform function
-        verbose = false,       -- verbose output
+        verbose = false,   -- verbose output
       })
     end,
   },
@@ -27,10 +27,10 @@ return {
     ft = "go",
     config = function()
       local goc = require("nvim-goc").setup({
-        vertivalSplit = false,                                                 -- open in vertical split
+        vertivalSplit = false,                                              -- open in vertical split
       })
-      vim.keymap.set("n", "<Leader>gcf", goc.Coverage, { silent = true })      -- run for the whole File
-      vim.keymap.set("n", "<Leader>gct", goc.CoverageFunc, { silent = true })  -- run only for a specific Test unit
+      vim.keymap.set("n", "<Leader>gcf", goc.Coverage, { silent = true })   -- run for the whole File
+      vim.keymap.set("n", "<Leader>gct", goc.CoverageFunc, { silent = true }) -- run only for a specific Test unit
       vim.keymap.set("n", "<Leader>gcc", goc.ClearCoverage, { silent = true }) -- clear coverage highlights
 
       vim.keymap.set("n", "]a", goc.Alternate, { silent = true })
