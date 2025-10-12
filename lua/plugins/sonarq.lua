@@ -1,27 +1,34 @@
 return {
   {
-    url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+    "iamkarasik/sonarqube.nvim",
     config = function()
-      require("sonarlint").setup({
-        server = {
+      local extension_path = vim.fn.stdpath("data") .. "/mason/packages/sonarlint-language-server/extension"
+
+      require("sonarqube").setup({
+        lsp = {
           cmd = {
-            "sonarlint-language-server",
-            "--stdio",
-            "--analyzers",
-            -- PATH where is all the sonar analyzers /Users/erickeduardogomezjimenez/projects/sonar/extension/analyzers
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpyhton.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarhtml.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonariac.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
+            vim.fn.exepath("java"),
+            "-jar",
+            extension_path .. "/server/sonarlint-ls.jar",
+            "-stdio",
+            "-analyzers",
+            extension_path .. "/analyzers/sonargo.jar",
+            extension_path .. "/analyzers/sonarhtml.jar",
+            extension_path .. "/analyzers/sonariac.jar",
+            extension_path .. "/analyzers/sonarjava.jar",
+            extension_path .. "/analyzers/sonarjavasymbolicexecution.jar",
+            extension_path .. "/analyzers/sonarjs.jar",
+            extension_path .. "/analyzers/sonarphp.jar",
+            extension_path .. "/analyzers/sonarpython.jar",
+            extension_path .. "/analyzers/sonartext.jar",
+            extension_path .. "/analyzers/sonarxml.jar",
           },
         },
-        filetypes = {
-          "python",
-          "go",
-          "html",
-          "js",
-          "tp",
+        csharp = {
+          enabled = true,
+          omnisharpDirectory = extension_path .. "/omnisharp",
+          csharpOssPath = extension_path .. "/analyzers/sonarcsharp.jar",
+          csharpEnterprisePath = extension_path .. "/analyzers/csharpenterprise.jar",
         },
       })
     end,
