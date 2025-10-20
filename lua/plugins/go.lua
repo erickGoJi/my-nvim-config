@@ -26,7 +26,12 @@ return {
     "rafaelsq/nvim-goc.lua",
     ft = "go",
     config = function()
-      local goc = require("nvim-goc").setup({
+      local ok, goc = pcall(require, "nvim-goc")
+      if not ok or not goc then
+        vim.notify("nvim-goc not found or failed to load", vim.log.levels.WARN)
+        return
+      end
+      goc.setup({
         vertivalSplit = false,                                              -- open in vertical split
       })
       vim.keymap.set("n", "<Leader>gcf", goc.Coverage, { silent = true })   -- run for the whole File
