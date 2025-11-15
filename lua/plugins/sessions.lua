@@ -1,23 +1,20 @@
 return {
 	{
 		"rmagatti/auto-session",
+		lazy = false,
+		opts = {
+			theme_conf = { border = true },
+			previewer = false,
+			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "~/fork" },
+		},
+		keys = {
+			-- Will use Telescope if installed or a vim.ui.select picker otherwise
+			{ "<leader>wr", "<cmd>AutoSession search<CR>", desc = "Session search" },
+			{ "<leader>ws", "<cmd>AutoSession save<CR>", desc = "Save session" },
+			{ "<leader>wa", "<cmd>AutoSession toggle<CR>", desc = "Toggle autosave" },
+		},
 		config = function()
-			require("auto-session").setup({
-				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "~/fork" },
-				session_lens = {
-					buftypes_to_ignore = {},
-					load_on_setup = true,
-					theme_conf = { border = true },
-					previewer = false,
-				},
-				vim.keymap.set("n", "<Leader>ss", "<cmd>SessionSave<cr>", { desc = "Save Session" }),
-				vim.keymap.set(
-					"n",
-					"<Leader>ls",
-					require("auto-session.session-lens").search_session,
-					{ noremap = true, silent = true, desc = "Search Sessions" }
-				),
-			})
+			require("auto-session").setup({})
 		end,
 	},
 }
