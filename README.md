@@ -180,11 +180,13 @@ nvim
    ```
    - Follow the authentication prompts
    - **Important**: Update the Node.js path in `lua/plugins/copilot.lua` if needed:
+     ```bash
+     # Find your Node.js path
+     which node
+     # or: whereis node
+     ```
+     Then edit `lua/plugins/copilot.lua` and update:
      ```lua
-     -- Find your Node.js path
-     which node  # or: whereis node
-     
-     -- Edit lua/plugins/copilot.lua and update:
      vim.g.copilot_node_command = "/path/to/your/node"
      ```
 
