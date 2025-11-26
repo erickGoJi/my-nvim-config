@@ -233,6 +233,18 @@ Edit `lua/plugins/copilot.lua` to:
 
 ## 📖 Usage Guide
 
+### Key Mappings Documentation
+
+For a comprehensive reference of all key mappings and keybindings in this configuration, see:
+
+**📚 [Complete Mappings Reference](documents/mappings.md)**
+
+This document includes:
+- All keybindings organized by feature
+- Plugin-specific mappings
+- LSP and debugging shortcuts
+- Customization instructions
+
 ### Essential Keybindings
 
 **General**
@@ -248,9 +260,9 @@ Edit `lua/plugins/copilot.lua` to:
 - Commands available via `:CopilotChat`
 
 **File Navigation**
-- `<leader>ff` - Find files (requires Telescope)
-- `<leader>fg` - Live grep search (requires Telescope)
-- File explorer commands available via Neo-tree
+- `<C-p>` - Find files (Telescope)
+- `<leader>fg` - Live grep search (Telescope)
+- `<C-n>` - Toggle file explorer (Neo-tree)
 
 ### Running Tests
 
