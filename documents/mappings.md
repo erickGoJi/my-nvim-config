@@ -24,10 +24,16 @@ vim.g.mapleader = " "
 
 | Mode | Mapping | Action | Description |
 |------|---------|--------|-------------|
-| Visual | `<leader>y` | `"+y` | Copy selection to system clipboard |
-| Normal | `<leader>p` | `"+yy` | Copy current line to system clipboard (note: 'p' here means 'pull' to clipboard, not paste) |
+| Visual | `<leader>y` | `"+y` | Copy (yank) selection to system clipboard |
+| Normal | `<leader>p` | `"+yy` | Copy (yank) current line to system clipboard |
 
-> **Note**: System clipboard integration is enabled with `set clipboard=unnamedplus`, allowing seamless copy/paste between Neovim and the system. Regular yank and paste operations (y/p) also work with the system clipboard due to this setting.
+> **Important Note**: Despite using 'p' in the mapping (which typically means paste in Vim), `<leader>p` is configured to **copy** (yank) the current line to the system clipboard, not paste. This is an unconventional choice in this configuration.
+>
+> For **pasting** from system clipboard:
+> - Use the standard `p` or `P` keys in Normal mode (works due to `clipboard=unnamedplus`)
+> - Or use `"+p` explicitly to paste from system clipboard
+>
+> System clipboard integration is enabled with `set clipboard=unnamedplus`, allowing seamless copy/paste between Neovim and the system.
 
 ---
 
@@ -86,7 +92,7 @@ AI-powered code completion and assistance.
 | Mode | Mapping | Action | Description |
 |------|---------|--------|-------------|
 | Insert | `<S-Tab>` | Accept suggestion | Accept Copilot's code suggestion |
-| Normal | `cp` | `:Copilot panel` | Open Copilot panel |
+| Normal | `cp` | `vim.cmd("Copilot panel")` | Open Copilot panel |
 
 ### Copilot Chat
 
