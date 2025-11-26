@@ -25,9 +25,9 @@ vim.g.mapleader = " "
 | Mode | Mapping | Action | Description |
 |------|---------|--------|-------------|
 | Visual | `<leader>y` | `"+y` | Copy selection to system clipboard |
-| Normal | `<leader>p` | `"+yy` | Copy current line to system clipboard |
+| Normal | `<leader>p` | `"+yy` | Copy current line to system clipboard (note: 'p' here means 'pull' to clipboard, not paste) |
 
-> **Note**: System clipboard integration is enabled with `set clipboard=unnamedplus`, allowing seamless copy/paste between Neovim and the system.
+> **Note**: System clipboard integration is enabled with `set clipboard=unnamedplus`, allowing seamless copy/paste between Neovim and the system. Regular yank and paste operations (y/p) also work with the system clipboard due to this setting.
 
 ---
 
@@ -40,7 +40,7 @@ Telescope provides powerful fuzzy finding capabilities for files, text, and more
 | Normal | `<C-p>` | Find files | Open file finder |
 | Normal | `<leader>fg` | Live grep | Search text across all files |
 | Normal | `<leader>fs` | Grep string | Search word under cursor |
-| Normal | `<C-f>` | Current buffer fuzzy find | Search within current file |
+| Normal | `<C-f>` | Current buffer fuzzy find | Search within current file (Note: also used in Insert mode for completion docs - see Completion section) |
 | Normal | `<leader>fi` | Live grep with args | Advanced grep with arguments |
 
 **Configuration file**: `lua/plugins/telescope.lua`
@@ -149,7 +149,7 @@ Autocompletion mappings within the completion menu.
 | Mode | Mapping | Action | Description |
 |------|---------|--------|-------------|
 | Insert | `<C-b>` | Scroll docs up | Scroll documentation window up |
-| Insert | `<C-f>` | Scroll docs down | Scroll documentation window down |
+| Insert | `<C-f>` | Scroll docs down | Scroll documentation window down (Note: `<C-f>` in Normal mode is for Telescope fuzzy find) |
 | Insert | `<C-Space>` | Trigger completion | Manually trigger completion menu |
 | Insert | `<C-e>` | Abort | Close completion menu |
 | Insert | `<CR>` | Confirm | Confirm selected completion item |
