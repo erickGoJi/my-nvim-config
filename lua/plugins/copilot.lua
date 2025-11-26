@@ -20,7 +20,7 @@ return {
 			end
 			vim.g.copilot_filetypes = {
 				["*"] = true, -- Enable Copilot for all file types
-				["markdown"] = false, -- Disable Copilot for markdown files
+				["markdown"] = true, -- Disable Copilot for markdown files
 				["text"] = false, -- Disable Copilot for text files
 				["html"] = false, -- Disable Copilot for HTML files
 				["css"] = false, -- Disable Copilot for CSS files
@@ -52,7 +52,12 @@ return {
 		build = "make tiktoken",
 		opts = {
 			-- See Configuration section for options
-			-- model = "gpt-4.1", -- AI model to use
+			model = "claude-sonnet-4.5", -- AI model to use
+			-- model = "gpt-4o", -- AI model to use
+			-- model = "gpt-4o-mini", -- AI model to use
+			-- model = "gpt-3.5-turbo", -- AI model to use
+			max_tokens = 1000, -- Max tokens in response
+			-- temperature = 0.7, -- Lower = focused, higher = creative
 			temperature = 0.1, -- Lower = focused, higher = creative
 			window = {
 				layout = "float",
