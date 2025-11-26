@@ -34,6 +34,7 @@ return {
 			})
 			vim.lsp.buf.format({ timeout_ms = 2000 })
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 		end,
 	},
 }
