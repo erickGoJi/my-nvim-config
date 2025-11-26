@@ -83,6 +83,26 @@ When in the Neo-tree git status window, the following mappings are available:
 
 ---
 
+## Buffer Navigation (Barbar)
+
+Barbar provides enhanced buffer (tab) navigation and management.
+
+| Mode | Mapping | Action | Description |
+|------|---------|--------|-------------|
+| Normal | `<Tab>` | `BufferNext` | Navigate to next buffer |
+| Normal | `<S-Tab>` | `BufferPrevious` | Navigate to previous buffer (Note: in Insert mode, `<S-Tab>` accepts Copilot suggestions) |
+| Normal | `<A-Left>` | `BufferMovePrevious` | Move current buffer to the left |
+| Normal | `<A-Right>` | `BufferMoveNext` | Move current buffer to the right |
+| Normal | `<leader>c` | `BufferClose` | Close current buffer |
+
+> **Note**: `<S-Tab>` has different functions depending on mode:
+> - **Normal mode**: Navigate to previous buffer
+> - **Insert mode**: Accept Copilot suggestion (see Copilot section)
+
+**Configuration file**: `lua/plugins/bar.lua`
+
+---
+
 ## GitHub Copilot
 
 AI-powered code completion and assistance.
@@ -129,6 +149,28 @@ LSP keybindings are automatically set up by the nvim-lspconfig plugin. Common LS
 
 ---
 
+## Formatting and Linting (none-ls)
+
+Code formatting and linting configuration using none-ls.
+
+| Mode | Mapping | Action | Description |
+|------|---------|--------|-------------|
+| Normal | `<leader>gf` | `vim.lsp.buf.format` | Format current buffer with LSP |
+| Normal | `gd` | `vim.lsp.buf.definition` | Go to definition (also available via LSP) |
+
+> **Note**: Auto-formatting on save is enabled for supported file types. Use `<leader>gf` for manual formatting.
+>
+> **Supported formatters**:
+> - Lua: stylua
+> - Go: gofumpt, goimports_reviser
+> - JavaScript/TypeScript: prettier
+> - YAML: yamlfmt
+> - Python: black, ruff
+
+**Configuration file**: `lua/plugins/none-ls.lua`
+
+---
+
 ## Debugging (DAP)
 
 Debug Adapter Protocol support for interactive debugging.
@@ -145,6 +187,33 @@ Debug Adapter Protocol support for interactive debugging.
 | Normal | `<leader>de` | Toggle UI | Show/hide debug UI |
 
 **Configuration file**: `lua/plugins/debugging.lua`
+
+---
+
+## Go Development
+
+Go-specific development tools and test coverage mappings.
+
+### Coverage Testing
+
+| Mode | Mapping | Action | Description |
+|------|---------|--------|-------------|
+| Normal | `<leader>gcf` | Run coverage | Run coverage for whole file |
+| Normal | `<leader>gct` | Run coverage for test | Run coverage for specific test unit |
+| Normal | `<leader>gcc` | Clear coverage | Clear coverage highlights |
+| Normal | `<leader>gca` | Coverage with browser | Coverage for whole file with browser open |
+| Normal | `<leader>gcb` | Coverage function with browser | Coverage for current function with browser |
+
+### File Navigation
+
+| Mode | Mapping | Action | Description |
+|------|---------|--------|-------------|
+| Normal | `]a` | Alternate file | Alternate between test and implementation file |
+| Normal | `[a` | Alternate split | Alternate in split (vertical/horizontal) |
+
+> **Note**: The gopher.nvim plugin provides additional Go-specific commands like `:GoInstallDeps`, `:GoMod`, `:GoGenerate`, etc. These coverage tools are particularly useful for TDD workflows.
+
+**Configuration files**: `lua/plugins/go.lua`
 
 ---
 
@@ -254,10 +323,14 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 | `<leader>w` | Save file |
 | `<C-p>` | Find files |
 | `<C-n>` | Toggle file tree |
+| `<Tab>` | Next buffer |
+| `<S-Tab>` | Previous buffer (Normal) / Accept Copilot (Insert) |
+| `<leader>c` | Close buffer |
 | `<leader>fg` | Search in files |
+| `<leader>gf` | Format buffer |
 | `<leader>dt` | Toggle breakpoint |
 | `gcc` | Toggle comment |
-| `<S-Tab>` | Accept Copilot (insert mode) |
+| `gd` | Go to definition |
 
 ---
 
