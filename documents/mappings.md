@@ -156,7 +156,7 @@ Code formatting and linting configuration using none-ls.
 | Mode | Mapping | Action | Description |
 |------|---------|--------|-------------|
 | Normal | `<leader>gf` | `vim.lsp.buf.format` | Format current buffer with LSP |
-| Normal | `gd` | `vim.lsp.buf.definition` | Go to definition (also available via LSP) |
+| Normal | `gd` | `vim.lsp.buf.definition` | Go to definition (standard LSP mapping) |
 
 > **Note**: Auto-formatting on save is enabled for supported file types. Use `<leader>gf` for manual formatting.
 >
