@@ -11,7 +11,12 @@ vim.cmd("set listchars=tab:»·,trail:·,space:·,nbsp:␣")
 vim.cmd("set clipboard=unnamedplus")
 vim.g.mapleader = " "
 vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
-  end,
+	callback = function()
+		vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+	end,
 })
+
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
