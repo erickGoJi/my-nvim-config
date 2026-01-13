@@ -16,6 +16,7 @@ return {
 					null_ls.builtins.formatting.yamlfmt,
 					null_ls.builtins.formatting.black,
 					null_ls.builtins.formatting.ruff,
+					null_ls.builtins.formatting.clang_format,
 					null_ls.builtins.diagnostics.golangci_lint,
 					require("none-ls.diagnostics.eslint"),
 				},
