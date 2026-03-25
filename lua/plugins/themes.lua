@@ -50,7 +50,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("oasis").setup({
-				dark_style = "mirage", -- Style to use when vim.o.background is "dark"
+				dark_style = "cactus", -- Style to use when vim.o.background is "dark"
 				light_style = "day", -- Style to use when vim.o.background is "light"
 				style = nil, -- Optional: Set a single style to disable auto-switching (e.g., "lagoon", "desert")
 				use_legacy_comments = false, -- Uses the legacy comment color from desert.vim for the "desert" style only (a bright sky blue)
@@ -71,7 +71,7 @@ return {
 				palette_overrides = {}, -- Override colors in specific palettes
 				highlight_overrides = {}, -- Override specific highlight groups
 			})
-			vim.cmd.colorscheme("oasis-mirage")
+			vim.cmd.colorscheme("oasis-cactus")
 		end,
 	},
 }
