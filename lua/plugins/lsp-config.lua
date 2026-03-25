@@ -32,6 +32,7 @@ return {
 				"pyright",
 				"ruff",
 				"clangd",
+				"ruff",
 			},
 		},
 		config = function()
@@ -47,6 +48,7 @@ return {
 					"pyright",
 					"ruff",
 					"clangd",
+					"ruff",
 				},
 			})
 		end,
