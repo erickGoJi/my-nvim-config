@@ -71,7 +71,7 @@ return {
 				palette_overrides = {}, -- Override colors in specific palettes
 				highlight_overrides = {}, -- Override specific highlight groups
 			})
-			vim.cmd.colorscheme("oasis-mirage")
+			vim.cmd.colorscheme("oasis-cactus")
 		end,
 	},
 }
