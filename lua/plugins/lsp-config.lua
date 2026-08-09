@@ -22,33 +22,35 @@ return {
 		},
 		opts = {
 			ensure_installed = {
-				"lua_ls",
-				"gopls",
-				"ts_ls",
+				"bashls",
+				"clangd",
 				"dockerls",
 				"erlangls",
-				"bashls",
-				"yamlls",
+				"gopls",
+				"lua_ls",
 				"pyright",
 				"ruff",
-				"clangd",
 				"ruff",
+				"ts_ls",
+				"yamlls",
+				"dcm",
 			},
 		},
 		config = function()
 			require("mason-lspconfig").setup({
 				automatic_enable = {
-					"lua_ls",
-					"gopls",
-					"ts_ls",
+					"bashls",
+					"clangd",
 					"dockerls",
 					"erlangls",
-					"bashls",
-					"yamlls",
+					"gopls",
+					"lua_ls",
 					"pyright",
 					"ruff",
-					"clangd",
 					"ruff",
+					"ts_ls",
+					"yamlls",
+					"dcm",
 				},
 			})
 		end,
@@ -86,6 +88,7 @@ return {
 			})
 			setup_server("ruff", { capabilities = capabilities })
 			setup_server("clangd", { capabilities = capabilities })
+			setup_server("dcm", { capabilities = capabilities })
 			setup_server("yamlls", {
 				capabilities = capabilities,
 				settings = {

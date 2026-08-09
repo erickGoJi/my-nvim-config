@@ -37,6 +37,11 @@ return {
 				["json"] = true, -- Enable Copilot for JSON files
 				["yaml"] = true, -- Enable Copilot for YAML files
 				["xml"] = true, -- Enable Copilot for XML files
+				["toml"] = true, -- Enable Copilot for TOML files
+				["dockerfile"] = true, -- Enable Copilot for Dockerfiles
+				["makefile"] = true, -- Enable Copilot for Makefiles
+				["vim"] = true, -- Enable Copilot for Vimscript files
+				["zsh"] = true, -- Enable Copilot for Zsh scripts
 			}
 
 			vim.keymap.set("n", "cp", function()
